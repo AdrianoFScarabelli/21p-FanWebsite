@@ -1,5 +1,3 @@
-
-
 body {
   margin: 0;
   padding: 0;
@@ -28,6 +26,23 @@ body {
   box-sizing: inherit;
 }
 
-header {
 
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header-options {
+  font-size: 26px;
+  font-family: 'Anton', sans-serif;
+  color: #DB2422;
+}
+
+.logo {
+  height: 150px;
+  width: 150px;
+  margin-left: 100px;
+  margin-top: 25px;
 }
