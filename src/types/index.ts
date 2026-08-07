@@ -6,3 +6,19 @@ export interface Character {
   description: string;
   faction?: 'Dema' | 'Trench' | 'Bishops';
 }
+
+export interface Album {
+  id: number;
+  name: string;
+  imageUrl: string;
+  backgroundColor: string;
+  foregroundColor: string;
+  arrowsColor: string;
+}
+
+export interface Region {
+  id: number;
+  name: string;
+  imageUrl: string;
+  accentColor: string;
+}

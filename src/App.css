@@ -70,3 +70,77 @@ header h2 {
   height: 900px;
   width: 1100px;
 }
+
+.albuns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.albuns-options {
+  display: flex;
+  align-items: center;
+  font-family: 'Anton', sans-serif;
+  font-size: 30px;
+}
+
+.albuns-cover {
+  /* height: 500px;
+  width: 500px;
+  margin-top: 50px; */
+
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  transition: all 0.4s ease;
+}
+
+.albuns-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.albuns-preview {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  opacity: 0.3;
+  filter: blur(2px);
+  transform: scale(0.85);
+  transition: all 0.8s ease;
+  cursor: pointer;
+}
+
+.albuns-preview:hover {
+  opacity: 0.5;
+}
+
+.arrow-left {
+  width: 24px;
+  height: 24px;
+  background-color: currentColor;
+  clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
+  display: inline-block;
+  margin-right: 50px;
+  transition: transform 0.8s;
+}
+
+.arrow-left:hover {
+  transform: scale(1.25);
+}
+
+.arrow-right {
+  width: 24px;
+  height: 24px;
+  background-color: currentColor;
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  display: inline-block;
+  margin-left: 50px;
+  transition: transform 0.8s;
+}
+
+.arrow-right:hover {
+  transform: scale(1.25);
+}

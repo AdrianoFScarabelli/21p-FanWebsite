@@ -1,0 +1,60 @@
+import type { Album } from '../types';
+
+export const albuns: Album[] = [
+  {
+    id: 1,
+    name: 'Twenty One Pilots',
+    imageUrl: 'album1.png',
+    backgroundColor: '#2E0F29',
+    foregroundColor: '#fff',
+    arrowsColor: '#9CCB41',
+  },
+  {
+    id: 2,
+    name: 'Vessel',
+    imageUrl: 'album2.png',
+    backgroundColor: '#0B121A',
+    foregroundColor: '#fff',
+    arrowsColor: '#89909A',
+  },
+  {
+    id: 3,
+    name: 'Blurryface',
+    imageUrl: 'album3.png',
+    backgroundColor: '#1a1a1a6e',
+    foregroundColor: '#fff',
+    arrowsColor: '#E95139',
+  },
+  {
+    id: 4,
+    name: 'Trench',
+    imageUrl: 'album4.png',
+    backgroundColor: '#23241C',
+    foregroundColor: '#fff',
+    arrowsColor: '#E5CC0A',
+  },
+  {
+    id: 5,
+    name: 'Scaled and Icy',
+    imageUrl: 'album5.png',
+    backgroundColor: '#7bc0c963',
+    foregroundColor: '#fff',
+    arrowsColor: '#EF8CAF',
+  },
+  {
+    id: 6,
+    name: 'Clancy',
+    imageUrl: 'album6.png',
+    backgroundColor: '#e23d3734',
+    foregroundColor: '#fff',
+    arrowsColor: '#FCE51C',
+  },
+  {
+    id: 7,
+    name: 'Breach',
+    imageUrl: 'album7.png',
+    backgroundColor: '#2B1716',
+    foregroundColor: '#fff',
+    arrowsColor: '#E34A3D',
+  },
+];
