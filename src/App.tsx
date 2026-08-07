@@ -3,18 +3,23 @@ import './App.css';
 import { characters } from './data/characters';
 import { albuns } from './data/albuns';
 
+const ITEM_WIDTH = 200;
+const GAP = 32;
+
 function App() {
 
   const [activeIndex, setActiveIndex] = useState(0);
-
   const activeAlbum = albuns[activeIndex];
-  const prevIndex = (activeIndex - 1 + albuns.length) % albuns.length;
-  const nextIndex = (activeIndex + 1) % albuns.length;
-  const prevAlbum = albuns[prevIndex];
-  const nextAlbum = albuns[nextIndex];
 
-  const goToPrev = () => setActiveIndex(prevIndex);
-  const goToNext = () => setActiveIndex(nextIndex);
+  const goToPrev = () => {
+    setActiveIndex((prev) => (prev - 1 + albuns.length) % albuns.length);
+  };
+
+  const goToNext = () => {
+    setActiveIndex((prev) => (prev + 1) % albuns.length);
+  };
+
+  const offset = activeIndex * (ITEM_WIDTH + GAP);
 
   return (
     <div>
@@ -34,7 +39,7 @@ function App() {
       <section id="background" className="background">
         <img src="/background.png" alt="foto de fundo" />
       </section>
-      
+
       <section id="sobre" className="sobre">
         <img src="/sobre-image.png" alt="foto da logo" className="sobre-image" />
         <div style={{marginRight: '50px'}}>
@@ -52,26 +57,21 @@ function App() {
         className="albuns"
         style = {{ background: `linear-gradient(180deg, #000 0%, ${activeAlbum.backgroundColor} 100%)` }}
       >
-        <div className="albuns-carousel">
-          <img
-            src={prevAlbum.imageUrl}
-            alt={prevAlbum.name}
-            className="albuns-preview albuns-preview-left"
-            onClick={goToPrev}
-          />
-
-          <img
-            src={activeAlbum.imageUrl}
-            alt={activeAlbum.name}
-            className="albuns-cover"
-          />
-
-          <img
-            src={nextAlbum.imageUrl}
-            alt={nextAlbum.name}
-            className="albuns-preview albuns-preview-right"
-            onClick={goToNext}
-          />
+        <div className="albuns-track-wrapper">
+          <div
+            className="albuns-track"
+            style={{ transform: `translateX(calc(50% - ${ITEM_WIDTH / 2}px - ${offset}px))` }}
+          >
+            {albuns.map((album, index) => (
+              <img
+                key={album.id}
+                src={album.imageUrl}
+                alt={album.name}
+                className={`albuns-item ${index === activeIndex ? 'active' : ''}`}
+                onClick={() => setActiveIndex(index)}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="albuns-options">
