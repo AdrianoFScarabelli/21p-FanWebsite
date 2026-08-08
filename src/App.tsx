@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './App.css';
-import { characters } from './data/characters';
 import { albuns } from './data/albuns';
 
 const ITEM_WIDTH = 200;
