@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import { albuns } from './data/albuns';
 
@@ -20,12 +20,16 @@ function App() {
 
   const offset = activeIndex * (ITEM_WIDTH + GAP);
 
+  function reset() {
+    window.scrollTo(0, 0);
+  }
+
   return (
     <div>
       {/* <div className="hero"></div> */}
       <header>
         <div>
-          <img src="/logo.png" alt="foto da logo" className="logo" />
+          <img src="/logo.png" alt="foto da logo" className="logo" onClick={reset}/>
         </div>
         <nav className="header-options">
           <h2>SOBRE</h2>
@@ -56,6 +60,7 @@ function App() {
         className="albuns"
         style = {{ background: `linear-gradient(180deg, #000 0%, ${activeAlbum.backgroundColor} 100%)` }}
       >
+        <h2 style={{fontSize: '50px', fontFamily: 'Anton, sans-serif'}}>DISCOGRAFIA</h2>
         <div className="albuns-track-wrapper">
           <div
             className="albuns-track"
@@ -72,7 +77,6 @@ function App() {
             ))}
           </div>
         </div>
-
         <div className="albuns-options">
           <span
             className="arrow-left"
@@ -91,6 +95,8 @@ function App() {
           />
         </div>
       </section>
+
+      
 
     </div>
   );
