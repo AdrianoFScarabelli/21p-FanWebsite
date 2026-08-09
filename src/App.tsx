@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import { albuns } from './data/albuns';
+import { characters } from './data/characters';
 
 const ITEM_WIDTH = 200;
 const GAP = 32;
@@ -102,13 +103,13 @@ function App() {
         </div>
       </section>
 
-      <section id="personagens" className="personagens">
-        <div>
+      <section id="personagens" className="personagens" style = {{ background: `linear-gradient(0deg, #000 0%, ${activeAlbum.backgroundColor} 100%)` }}>
+        <div className="personagens-info">
           <h2 style={{fontSize: '50px', fontFamily: 'Anton, sans-serif'}}>PERSONAGENS</h2>
-          <p>Texto</p>
+          <p>{characters[0].description}</p>
         </div>
         <div>
-            
+          <img src={characters[0].imageUrl} alt="foto do personagem" className="personagens-card"/>
         </div>
         
       </section>

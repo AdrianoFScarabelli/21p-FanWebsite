@@ -175,3 +175,20 @@ header h2 {
 .arrow-right:hover {
   transform: scale(1.25);
 }
+
+.personagens {
+  display: flex;
+  justify-content: space-between;
+}
+
+.personagens-info {
+  margin-left: 10vh;
+}
+
+.personagens-card {
+  border: #DB2422;
+  border-style: solid;
+  border-radius: 20px;
+  margin-top: 10vh;
+  margin-right: 10vh;
+}
