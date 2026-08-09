@@ -1,3 +1,11 @@
+:root {
+  --header-height: 8vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -15,7 +23,6 @@ body {
   text-rendering: optimizeLegibility;
 
   overflow-x: hidden;
-  scroll-behavior: smooth;
 
   min-height: 100vh;
 }
@@ -24,6 +31,10 @@ body {
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+section {
+  scroll-margin-top: var(--header-height);
 }
 
 header {
@@ -40,7 +51,8 @@ header {
 }
 
 header h2 {
-  margin: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   font-family: 'Anton', sans-serif;
 }
 
@@ -56,6 +68,11 @@ header h2 {
   align-items: center;
   color: #DB2422;
   margin-right: 100px;
+}
+
+.header-options a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .logo {

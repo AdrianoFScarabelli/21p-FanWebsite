@@ -32,9 +32,15 @@ function App() {
           <img src="/logo.png" alt="foto da logo" className="logo" onClick={reset}/>
         </div>
         <nav className="header-options">
-          <h2>SOBRE</h2>
-          <h2>ÁLBUNS</h2>
-          <h2>PERSONAGENS</h2>
+          <a href="#sobre">
+            <h2>SOBRE</h2>
+          </a>
+          <a href="#albuns">
+            <h2>ÁLBUNS</h2>
+          </a>
+          <a href="#personagens">
+            <h2>PERSONAGENS</h2>
+          </a>
           <h2>REGIÕES</h2>
         </nav>
       </header>
@@ -96,7 +102,16 @@ function App() {
         </div>
       </section>
 
-      
+      <section id="personagens" className="personagens">
+        <div>
+          <h2 style={{fontSize: '50px', fontFamily: 'Anton, sans-serif'}}>PERSONAGENS</h2>
+          <p>Texto</p>
+        </div>
+        <div>
+            
+        </div>
+        
+      </section>
 
     </div>
   );
