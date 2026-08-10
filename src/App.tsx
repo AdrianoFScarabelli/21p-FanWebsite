@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
 import { albuns } from './data/albuns';
 import { characters } from './data/characters';
@@ -8,18 +8,33 @@ const GAP = 32;
 
 function App() {
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activeAlbum = albuns[activeIndex];
+  //LÓGICA ALBUNS
 
-  const goToPrev = () => {
-    setActiveIndex((prev) => (prev - 1 + albuns.length) % albuns.length);
+  const [activeAlbumIndex, setActiveAlbumIndex] = useState(0);
+  const activeAlbum = albuns[activeAlbumIndex];
+
+  const goToPrevAlbum = () => {
+    setActiveAlbumIndex((prev) => (prev - 1 + albuns.length) % albuns.length);
   };
 
-  const goToNext = () => {
-    setActiveIndex((prev) => (prev + 1) % albuns.length);
+  const goToNextAlbum = () => {
+    setActiveAlbumIndex((prev) => (prev + 1) % albuns.length);
   };
 
-  const offset = activeIndex * (ITEM_WIDTH + GAP);
+  const offset = activeAlbumIndex * (ITEM_WIDTH + GAP);
+
+  //LÓGICA PERSONAGENS
+
+  const [activeCharacterIndex, setActiveCharacterIndex] = useState(0);
+  const activeCharacter = characters[activeCharacterIndex];
+
+  const goToPrevCharacter = () => {
+    setActiveCharacterIndex((prev) => (prev - 1 + characters.length) % characters.length);
+  };
+
+  const goToNextCharacter = () => {
+    setActiveCharacterIndex((prev) => (prev + 1) % characters.length);
+  };
 
   function reset() {
     window.scrollTo(0, 0);
@@ -78,8 +93,8 @@ function App() {
                 key={album.id}
                 src={album.imageUrl}
                 alt={album.name}
-                className={`albuns-item ${index === activeIndex ? 'active' : ''}`}
-                onClick={() => setActiveIndex(index)}
+                className={`albuns-item ${index === activeAlbumIndex ? 'active' : ''}`}
+                onClick={() => setActiveAlbumIndex(index)}
               />
             ))}
           </div>
@@ -88,7 +103,7 @@ function App() {
           <span
             className="arrow-left"
             style={{ backgroundColor: activeAlbum.arrowsColor }}
-            onClick={goToPrev}
+            onClick={goToPrevAlbum}
             role="button"
             aria-label="Álbum anterior"
           />
@@ -96,7 +111,7 @@ function App() {
           <span
             className="arrow-right"
             style={{ backgroundColor: activeAlbum.arrowsColor }}
-            onClick={goToNext}
+            onClick={goToNextAlbum}
             role="button"
             aria-label="Próximo álbum"
           />
@@ -106,10 +121,29 @@ function App() {
       <section id="personagens" className="personagens" style = {{ background: `linear-gradient(0deg, #000 0%, ${activeAlbum.backgroundColor} 100%)` }}>
         <div className="personagens-info">
           <h2 style={{fontSize: '50px', fontFamily: 'Anton, sans-serif'}}>PERSONAGENS</h2>
-          <p>{characters[0].description}</p>
+          <p>{activeCharacter.description}</p>
         </div>
-        <div>
-          <img src={characters[0].imageUrl} alt="foto do personagem" className="personagens-card"/>
+        <div className="personagens-group">
+          <img
+            src={activeCharacter.imageUrl}
+            alt={activeCharacter.name}
+            className="personagens-card"
+          />
+          <div className="albuns-options">
+            <span
+              className="arrow-left"
+              style={{ backgroundColor: activeCharacter.accentColor }}
+              role="button"
+              onClick={goToPrevCharacter}
+            />
+            <p>{activeCharacter.name}</p>
+            <span
+              className="arrow-right"
+              style={{ backgroundColor: activeCharacter.accentColor }}
+              role="button"
+              onClick={goToNextCharacter}
+            />
+          </div>
         </div>
         
       </section>

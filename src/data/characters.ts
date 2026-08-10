@@ -9,4 +9,12 @@ export const characters: Character[] = [
     description: 'Clancy é o protagonista...',
     faction: 'Trench',
   },
+  {
+    id: 2,
+    name: 'Torchbearer',
+    imageUrl: 'torchbearer.png',
+    accentColor: '#C41E1E',
+    description: 'Torchbearer é o segundo protagonista...',
+    faction: 'Trench',
+  },
 ];

@@ -107,6 +107,7 @@ header h2 {
 .albuns-options {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: 'Anton', sans-serif;
   font-size: 30px;
   margin-bottom: 50px;
@@ -186,9 +187,14 @@ header h2 {
 }
 
 .personagens-card {
+  width: 272,5px;
+  height: 555px;
   border: #DB2422;
   border-style: solid;
   border-radius: 20px;
   margin-top: 10vh;
+}
+
+.personagens-group {
   margin-right: 10vh;
 }
