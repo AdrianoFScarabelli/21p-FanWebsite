@@ -186,6 +186,11 @@ header h2 {
   margin-left: 10vh;
 }
 
+.personagens-info p {
+  white-space: pre-line;
+  width: 110vh;
+}
+
 .personagens-card {
   width: 272,5px;
   height: 555px;
