@@ -127,6 +127,7 @@ function App() {
           <img
             src={activeCharacter.imageUrl}
             alt={activeCharacter.name}
+            style={{ borderColor: activeCharacter.accentColor }}
             className="personagens-card"
           />
           <div className="albuns-options">

@@ -194,7 +194,7 @@ header h2 {
 .personagens-card {
   width: 272,5px;
   height: 555px;
-  border: #DB2422;
+  border: currentColor;
   border-style: solid;
   border-radius: 20px;
   margin-top: 10vh;
