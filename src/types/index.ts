@@ -4,7 +4,7 @@ export interface Character {
   imageUrl: string;
   accentColor: string;
   description: string;
-  faction?: 'Dema' | 'Banditos' | 'Bishops';
+  faction?: 'Neutral' | 'Banditos' | 'Bishops';
 }
 
 export interface Album {
