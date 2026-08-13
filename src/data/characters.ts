@@ -14,7 +14,7 @@ export const characters: Character[] = [
     name: 'Torchbearer',
     imageUrl: 'torchbearer.png',
     accentColor: '#E5CC0A',
-    description: 'Torchbearer é o segundo protagonista...',
+    description: 'O Torchbearer é o líder espiritual e tático dos Banditos, o grupo rebelde que luta contra o controle imposto pelos Bishops sobre a cidade de Dema. Interpretado por Josh Dun, ele veste as cores verde-oliva e amarelo características dos Banditos. O amarelo é usado justamente porque os Bishops não conseguem enxergar essa cor, o que faz dela um símbolo de esperança e invisibilidade contra o regime.\n Enquanto Clancy representa a luta interna da mente, o Torchbearer representa o suporte externo necessário pra sobreviver à jornada por Trench, ele guia Clancy, aparecendo nos momentos de fuga pra oferecer luz e direção em meio à escuridão da cidade murada.\n Sua real natureza é um dos grandes mistérios da lore: o Clancy que acompanhava o protagonista durante o isolamento na ilha de Voldsøy era apenas uma projeção, criada para guiá-lo de volta ao continente, revelando que o verdadeiro Torchbearer estava, o tempo todo, construindo e liderando o exército dos Banditos em Trench',
     faction: 'Banditos',
   },
   {
@@ -22,7 +22,7 @@ export const characters: Character[] = [
     name: 'Nico',
     imageUrl: 'nico.png',
     accentColor: '#C41E1E',
-    description: 'Torchbearer é o segundo protagonista...',
+    description: 'Nico é o líder dos nove Bishops que governam Dema, e o principal antagonista de toda a lore construída pela Twenty One Pilots. Seu nome completo, Nicolas Bourbaki, é revelado na música "Morph", mas sua identidade mais significativa vai muito além do título de Bishop: Nico é, na verdade, a representação física de Blurryface, o personagem que simboliza as inseguranças e a depressão de Tyler Joseph, introduzido no álbum homônimo de 2015.\n É Nico quem persegue incansavelmente Clancy sempre que ele tenta escapar de Dema, rastreando-o e trazendo-o de volta à cidade através de uma tática chamada "smearing", que deixa marcas escuras no pescoço e nas mãos de quem é capturado. Como líder dos Bishops, ele comanda um sistema onde cada um controla um distrito de Dema, sempre prontos pra impedir qualquer tentativa de fuga dos cidadãos.\n Diferente de Keons, outro Bishop conhecido por ser mais calmo e gentil com seus liderados, Nico é notoriamente tirânico, encarnando o próprio conflito interno que dá origem a toda a narrativa: a luta constante entre a esperança de liberdade dos Banditos e o peso simbólico de Blurryface tentando manter tudo sob controle.',
     faction: 'Bishops',
   },
   {
