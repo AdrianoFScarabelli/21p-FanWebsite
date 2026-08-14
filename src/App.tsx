@@ -61,10 +61,11 @@ function App() {
         </nav>
       </header>
 
+      {/* Section 1 */}
       <section id="background" className="background">
         <img src="/background.png" alt="foto de fundo" />
       </section>
-
+      {/* Section 2 */}
       <section id="sobre" className="sobre">
         <img src="/sobre-image.png" alt="foto da logo" className="sobre-image" />
         <div style={{marginRight: '50px'}}>
@@ -76,7 +77,7 @@ function App() {
           </p>
         </div>
       </section>
-      
+      {/* Section 3 */}
       <section
         id="albuns"
         className="albuns"
@@ -117,7 +118,7 @@ function App() {
           />
         </div>
       </section>
-
+      {/* Section 4 */}
       <section id="personagens" className="personagens" style = {{ background: `linear-gradient(0deg, #000 0%, ${activeAlbum.backgroundColor} 100%)` }}>
         <div className="personagens-info">
           <h2 style={{fontSize: '50px', fontFamily: 'Anton, sans-serif'}}>PERSONAGENS</h2>
@@ -146,7 +147,13 @@ function App() {
             />
           </div>
         </div>
-        
+      </section>
+
+      {/* Section 5 */}
+      <section id="regioes" className="regioes">
+        <div>
+            <img src="map1.png" alt="Mapa" />
+        </div>
       </section>
 
     </div>
