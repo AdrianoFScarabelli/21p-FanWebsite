@@ -38,12 +38,23 @@ function App() {
     setActiveCharacterIndex((prev) => (prev + 1) % characters.length);
   };
 
-  const changeCostume1 = () => {
-    setActiveCostumeIndex(0);
-  }
+  function changeCostume(index: string) {
 
-  const changeCostume2 = () => {
-    setActiveCostumeIndex(1);
+    if(index===activeCharacter.imageUrl[0]){
+      setActiveCostumeIndex(0);
+    }
+    else if(index===activeCharacter.imageUrl[1]) {
+      setActiveCostumeIndex(1);
+    }
+
+    else if(index===activeCharacter.imageUrl[2]) {
+      setActiveCostumeIndex(2);
+    }
+
+    else {
+      setActiveCostumeIndex(3);
+    }
+    
   }
 
   function reset() {
@@ -136,7 +147,17 @@ function App() {
         </div>
         <div className="personagens-group">
           <div className='personagens-costumes'>
-            <button 
+            {activeCharacter.imageUrl.map((index, cont) => (
+              <button
+                key={index}
+                className='costume-button' 
+                onClick={() => changeCostume(index)}
+                style={{ color: activeCharacter.accentColor, borderColor: activeCharacter.accentColor }}
+              >
+                {cont+1}
+              </button>
+            ))}
+            {/* <button 
               className='costume-button' 
               onClick={changeCostume1}
               style={{ color: activeCharacter.accentColor, borderColor: activeCharacter.accentColor }}
@@ -163,7 +184,7 @@ function App() {
               style={{ color: activeCharacter.accentColor, borderColor: activeCharacter.accentColor }}
             >
               4
-            </button>
+            </button> */}
           </div>
           <img
             src={activeCharacter.imageUrl[activeCostumeIndex]}

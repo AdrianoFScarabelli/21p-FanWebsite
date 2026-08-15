@@ -211,11 +211,11 @@ header h2 {
 }
 
 .costume-button {
-  height: 4vh;
-  width: 4vh;
-  font-size: 20px;
+  height: 3vh;
+  width: 3vh;
+  font-size: 18px;
   color: #DB2422;
   background-color: #000;
   border-color: #DB2422;
-  border-radius: 20px;
+  border-radius: 10px;
 }
