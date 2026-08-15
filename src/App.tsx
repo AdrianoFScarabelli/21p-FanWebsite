@@ -28,6 +28,8 @@ function App() {
   const [activeCharacterIndex, setActiveCharacterIndex] = useState(0);
   const activeCharacter = characters[activeCharacterIndex];
 
+  const [activeCostumeIndex, setActiveCostumeIndex] = useState(0);
+
   const goToPrevCharacter = () => {
     setActiveCharacterIndex((prev) => (prev - 1 + characters.length) % characters.length);
   };
@@ -35,6 +37,14 @@ function App() {
   const goToNextCharacter = () => {
     setActiveCharacterIndex((prev) => (prev + 1) % characters.length);
   };
+
+  const changeCostume1 = () => {
+    setActiveCostumeIndex(0);
+  }
+
+  const changeCostume2 = () => {
+    setActiveCostumeIndex(1);
+  }
 
   function reset() {
     window.scrollTo(0, 0);
@@ -125,8 +135,38 @@ function App() {
           <p>{activeCharacter.description}</p>
         </div>
         <div className="personagens-group">
+          <div className='personagens-costumes'>
+            <button 
+              className='costume-button' 
+              onClick={changeCostume1}
+              style={{ color: activeCharacter.accentColor, borderColor: activeCharacter.accentColor }}
+            >
+              1
+            </button>
+            <button 
+              className='costume-button' 
+              onClick={changeCostume1}
+              style={{ color: activeCharacter.accentColor, borderColor: activeCharacter.accentColor }}
+            >
+              2
+            </button>
+            <button 
+              className='costume-button' 
+              onClick={changeCostume1}
+              style={{ color: activeCharacter.accentColor, borderColor: activeCharacter.accentColor }}
+            >
+              3
+            </button>
+            <button 
+              className='costume-button' 
+              onClick={changeCostume1}
+              style={{ color: activeCharacter.accentColor, borderColor: activeCharacter.accentColor }}
+            >
+              4
+            </button>
+          </div>
           <img
-            src={activeCharacter.imageUrl}
+            src={activeCharacter.imageUrl[activeCostumeIndex]}
             alt={activeCharacter.name}
             style={{ borderColor: activeCharacter.accentColor }}
             className="personagens-card"
