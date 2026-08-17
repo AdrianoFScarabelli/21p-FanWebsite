@@ -32,10 +32,12 @@ function App() {
 
   const goToPrevCharacter = () => {
     setActiveCharacterIndex((prev) => (prev - 1 + characters.length) % characters.length);
+    setActiveCostumeIndex(0);
   };
 
   const goToNextCharacter = () => {
     setActiveCharacterIndex((prev) => (prev + 1) % characters.length);
+    setActiveCostumeIndex(0);
   };
 
   function changeCostume(index: string) {
