@@ -102,6 +102,7 @@ header h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20vh;
 }
 
 .albuns-options {
@@ -184,6 +185,7 @@ header h2 {
 
 .personagens-info {
   margin-left: 10vh;
+  margin-top: 10vh;
 }
 
 .personagens-info p {
@@ -197,11 +199,11 @@ header h2 {
   border: currentColor;
   border-style: solid;
   border-radius: 20px;
-  /* margin-top: 10vh; */
 }
 
 .personagens-group {
   margin-right: 10vh;
+  margin-top: 15vh;
 }
 
 .personagens-costumes {
@@ -218,4 +220,14 @@ header h2 {
   background-color: #000;
   border-color: #DB2422;
   border-radius: 10px;
+}
+
+.regioes {
+  display: flex;
+  justify-content: center;
+}
+
+.regioes-map {
+  height: 1000px;
+  width: 1000px;
 }

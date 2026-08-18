@@ -84,7 +84,10 @@ function App() {
           <a href="#personagens">
             <h2>PERSONAGENS</h2>
           </a>
-          <h2>REGIÕES</h2>
+          <a href="#regioes">
+            <h2>REGIÕES</h2>
+          </a>
+          
         </nav>
       </header>
 
@@ -110,7 +113,7 @@ function App() {
         className="albuns"
         style = {{ background: `linear-gradient(180deg, #000 0%, ${activeAlbum.backgroundColor} 100%)` }}
       >
-        <h2 style={{fontSize: '50px', fontFamily: 'Anton, sans-serif'}}>DISCOGRAFIA</h2>
+        <h2 style={{fontSize: '50px', fontFamily: 'Anton, sans-serif', marginTop: '12vh'}}>DISCOGRAFIA</h2>
         <div className="albuns-track-wrapper">
           <div
             className="albuns-track"
@@ -163,34 +166,6 @@ function App() {
                 {cont+1}
               </button>
             ))}
-            {/* <button 
-              className='costume-button' 
-              onClick={changeCostume1}
-              style={{ color: activeCharacter.accentColor, borderColor: activeCharacter.accentColor }}
-            >
-              1
-            </button>
-            <button 
-              className='costume-button' 
-              onClick={changeCostume1}
-              style={{ color: activeCharacter.accentColor, borderColor: activeCharacter.accentColor }}
-            >
-              2
-            </button>
-            <button 
-              className='costume-button' 
-              onClick={changeCostume1}
-              style={{ color: activeCharacter.accentColor, borderColor: activeCharacter.accentColor }}
-            >
-              3
-            </button>
-            <button 
-              className='costume-button' 
-              onClick={changeCostume1}
-              style={{ color: activeCharacter.accentColor, borderColor: activeCharacter.accentColor }}
-            >
-              4
-            </button> */}
           </div>
           <img
             src={activeCharacter.imageUrl[activeCostumeIndex]}
@@ -219,7 +194,7 @@ function App() {
       {/* Section 5 */}
       <section id="regioes" className="regioes">
         <div>
-            <img src="map1.png" alt="Mapa" />
+            <img src="map1.png" alt="Mapa" className="regioes-map"/>
         </div>
       </section>
 
