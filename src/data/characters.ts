@@ -4,7 +4,7 @@ export const characters: Character[] = [
   {
     id: 1,
     name: 'Clancy',
-    imageUrl: ['clancy.png', 'clancy2.png'],
+    imageUrl: ['clancy.png', 'clancy2.png', 'clancy3.png', 'clancy4.png', 'clancy5.png'],
     accentColor: '#E5CC0A',
     description: 'Clancy é o protagonista da lore construída pela Twenty One Pilots, um homem preso dentro dos limites de Trench (também chamada de Dema), uma cidade cercada por nove torres de pedra vigiadas pelos misteriosos Bishops.\n Sua história é contada de forma fragmentada ao longo dos álbuns Blurryface, Trench, Scaled and Icy e Clancy, através de letras, videoclipes e símbolos escondidos.\n Ao longo da narrativa, Clancy tenta escapar das muralhas amarelas que isolam Trench do mundo exterior, enfrentando os Bishops, figuras que mantêm os habitantes presos através do medo e da vigilância constante.\n Sua jornada é acompanhada por um grupo de rebeldes chamado Banditos, que também lutam contra o controle imposto pela cidade.\n O álbum Clancy (2024), que encerra essa fase da lore, marca o momento em que ele finalmente confronta Nico, o líder dos Bishops, buscando não só a própria liberdade, mas também resgatar quem ficou para trás em Trench.',
     faction: 'Banditos',
@@ -12,7 +12,7 @@ export const characters: Character[] = [
   {
     id: 2,
     name: 'Torchbearer',
-    imageUrl: ['torchbearer.png', 'torchbearer2.png'],
+    imageUrl: ['torchbearer.png', 'torchbearer2.png', 'torchbearer3.png', 'torchbearer4.png'],
     accentColor: '#E5CC0A',
     description: 'O Torchbearer é o líder espiritual e tático dos Banditos, o grupo rebelde que luta contra o controle imposto pelos Bishops sobre a cidade de Dema. Interpretado por Josh Dun, ele veste as cores verde-oliva e amarelo características dos Banditos. O amarelo é usado justamente porque os Bishops não conseguem enxergar essa cor, o que faz dela um símbolo de esperança e invisibilidade contra o regime.\n Enquanto Clancy representa a luta interna da mente, o Torchbearer representa o suporte externo necessário pra sobreviver à jornada por Trench, ele guia Clancy, aparecendo nos momentos de fuga pra oferecer luz e direção em meio à escuridão da cidade murada.\n Sua real natureza é um dos grandes mistérios da lore: o Clancy que acompanhava o protagonista durante o isolamento na ilha de Voldsøy era apenas uma projeção, criada para guiá-lo de volta ao continente, revelando que o verdadeiro Torchbearer estava, o tempo todo, construindo e liderando o exército dos Banditos em Trench',
     faction: 'Banditos',

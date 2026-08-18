@@ -53,8 +53,12 @@ function App() {
       setActiveCostumeIndex(2);
     }
 
-    else {
+    else if(index===activeCharacter.imageUrl[3]) {
       setActiveCostumeIndex(3);
+    }
+
+    else {
+      setActiveCostumeIndex(4);
     }
     
   }
