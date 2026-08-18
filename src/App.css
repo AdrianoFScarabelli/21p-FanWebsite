@@ -227,7 +227,50 @@ header h2 {
   justify-content: center;
 }
 
-.regioes-map {
+/* .regioes-map {
   height: 1000px;
   width: 1000px;
+} */
+
+
+/* CLASSES DA REGION */
+
+
+.map-wrapper {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  cursor: grab;
+  border: 2px solid #333;
+}
+
+.map-wrapper:active {
+  cursor: grabbing;
+}
+
+.map-content {
+  position: relative;
+}
+
+.map-image {
+  width: 100%;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+.map-pin {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.map-pin:hover {
+  transform: translate(-50%, -50%) scale(1.4);
 }

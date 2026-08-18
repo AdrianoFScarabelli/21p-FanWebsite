@@ -22,7 +22,7 @@ export interface Region {
   accentColor: string;
   description: string[];
   position: {
-    x: number; // porcentagem da largura do mapa (0-100)
-    y: number; // porcentagem da altura do mapa (0-100)
+    x: number;
+    y: number;
   };
 }

@@ -63,6 +63,10 @@ function App() {
     
   }
 
+  //LÓGICA REGIOES
+
+  //const [selectedRegion, setSelectedRegion] = useState<Region | null>(null);
+
   function reset() {
     window.scrollTo(0, 0);
   }
