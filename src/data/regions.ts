@@ -4,22 +4,22 @@ export const regions: Region[] = [
   {
     id: 1,
     name: 'Dema',
-    accentColor: '#E5E5E5',
+    accentColor: '#C41E1E',
     description: ['...'],
-    position: { x: 35, y: 78 }, // aproximando pela posição do selo "DEMA" no seu mapa
+    position: { x: 30, y: 30 },
   },
   {
     id: 2,
     name: 'Voldsøy',
-    accentColor: '#8FA8B2',
+    accentColor: '#EF8CAF',
     description: ['...'],
-    position: { x: 88, y: 62 },
+    position: { x: 35, y: 62 },
   },
   {
     id: 3,
     name: 'Port Vial',
-    accentColor: '#C41E1E',
+    accentColor: '#E5CC0A',
     description: ['...'],
-    position: { x: 60, y: 92 },
+    position: { x: 12, y: 47 },
   },
 ];

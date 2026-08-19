@@ -2,6 +2,9 @@ import { useState } from 'react';
 import './App.css';
 import { albuns } from './data/albuns';
 import { characters } from './data/characters';
+import { regions } from './data/regions';
+import { LoreMap } from './components/LoreMap';
+import type { Region } from './types';
 
 const ITEM_WIDTH = 200;
 const GAP = 32;
@@ -65,7 +68,7 @@ function App() {
 
   //LÓGICA REGIOES
 
-  //const [selectedRegion, setSelectedRegion] = useState<Region | null>(null);
+  const [selectedRegion, setSelectedRegion] = useState<Region | null>(null);
 
   function reset() {
     window.scrollTo(0, 0);
@@ -198,7 +201,16 @@ function App() {
       {/* Section 5 */}
       <section id="regioes" className="regioes">
         <div>
-            <img src="map1.png" alt="Mapa" className="regioes-map"/>
+          <h2 style={{ fontSize: '50px', fontFamily: 'Anton, sans-serif' }}>REGIÕES</h2>
+
+          <LoreMap onSelectRegion={setSelectedRegion} />
+
+          {selectedRegion && (
+            <div className="region-details" style={{ borderColor: selectedRegion.accentColor }}>
+              <h3>{selectedRegion.name}</h3>
+              {selectedRegion.description.map((p, i) => <p key={i}>{p}</p>)}
+            </div>
+          )}
         </div>
       </section>
 

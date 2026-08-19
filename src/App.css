@@ -225,38 +225,19 @@ header h2 {
 .regioes {
   display: flex;
   justify-content: center;
+  margin-bottom: 20vh;
 }
-
-/* .regioes-map {
-  height: 1000px;
-  width: 1000px;
-} */
 
 
 /* CLASSES DA REGION */
 
 
 .map-wrapper {
-  width: 100%;
-  height: 600px;
-  overflow: hidden;
   cursor: grab;
-  border: 2px solid #333;
 }
 
 .map-wrapper:active {
   cursor: grabbing;
-}
-
-.map-content {
-  position: relative;
-}
-
-.map-image {
-  width: 100%;
-  display: block;
-  user-select: none;
-  pointer-events: none;
 }
 
 .map-pin {
