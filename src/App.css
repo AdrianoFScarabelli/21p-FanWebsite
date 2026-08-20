@@ -70,6 +70,10 @@ header h2 {
   margin-right: 100px;
 }
 
+.header-options h2:hover {
+  color: #E5CC0A;
+}
+
 .header-options a {
   text-decoration: none;
   color: inherit;
@@ -240,10 +244,21 @@ header h2 {
   height: 3vh;
   width: 3vh;
   font-size: 18px;
-  color: #DB2422;
   background-color: #000;
-  border-color: #DB2422;
+  color: white;
+  cursor: pointer;
   border-radius: 10px;
+  margin-left: 1vh;
+}
+
+.costume-button:hover {
+  background-color: #424242;
+  color: currentColor;
+}
+
+.costume-button.active {
+  background-color: white;
+  color: #000;
 }
 
 .regioes {

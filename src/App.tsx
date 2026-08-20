@@ -170,16 +170,18 @@ function App() {
         </div>
         <div className="personagens-group">
           <div className='personagens-costumes'>
-            {activeCharacter.imageUrl.map((index, cont) => (
-              <button
-                key={index}
-                className='costume-button' 
-                onClick={() => changeCostume(index)}
-                style={{ color: activeCharacter.accentColor, borderColor: activeCharacter.accentColor }}
-              >
-                {cont+1}
-              </button>
-            ))}
+            <div className="personagens-numbers">
+              {activeCharacter.imageUrl.map((imageUrl, index) => (
+                <button
+                  key={index}
+                  className={`costume-button ${index === activeCostumeIndex ? 'active' : ''}`}
+                  onClick={() => changeCostume(imageUrl)}
+                  style={{ borderColor: activeCharacter.accentColor }}
+                >
+                  {index + 1}
+                </button>
+              ))}
+            </div>
           </div>
           <img
             src={activeCharacter.imageUrl[activeCostumeIndex]}
