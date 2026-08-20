@@ -28,7 +28,7 @@ export function LoreMap({ onSelectRegion }: LoreMapProps) {
         }}
       >
         <img
-          src="/map4.png"
+          src="map.png"
           alt="Mapa de Trench"
           className="map-image"
           style={{ width: '600px', height: '600px', objectFit: 'cover' }}

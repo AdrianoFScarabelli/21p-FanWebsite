@@ -200,18 +200,55 @@ function App() {
 
       {/* Section 5 */}
       <section id="regioes" className="regioes">
-        <div>
-          <h2 style={{ fontSize: '50px', fontFamily: 'Anton, sans-serif' }}>REGIÕES</h2>
 
-          <LoreMap onSelectRegion={setSelectedRegion} />
+        <div className="regioes-content">
 
-          {selectedRegion && (
-            <div className="region-details" style={{ borderColor: selectedRegion.accentColor }}>
-              <h3>{selectedRegion.name}</h3>
-              {selectedRegion.description.map((p, i) => <p key={i}>{p}</p>)}
+          <div>
+
+            <h2 style={{ fontSize: '50px', fontFamily: 'Anton, sans-serif' }}>REGIÕES</h2>
+
+            <div className="regioes-group">
+
+              <LoreMap onSelectRegion={setSelectedRegion} />
+
+              <div
+                className="region-details"
+                style={{ borderColor: selectedRegion?.accentColor ?? '#333' }}
+              >
+                {selectedRegion ? (
+                  <>
+                    <h3 style={{ color: selectedRegion.accentColor }}>{selectedRegion.name}</h3>
+                    {selectedRegion.description.map((p, i) => <p key={i}>{p}</p>)}
+                  </>
+                ) : (
+                  <p className="region-placeholder">Clique em um ponto do mapa para ver mais detalhes.</p>
+                )}
+              </div>
+
             </div>
-          )}
+
+            
+          </div>
+
+          
+
         </div>
+
+          {/* <div>
+            <h2 style={{ fontSize: '50px', fontFamily: 'Anton, sans-serif' }}>REGIÕES</h2>
+
+            <LoreMap onSelectRegion={setSelectedRegion} />
+          </div>
+
+          <div>
+            {selectedRegion && (
+              <div className="region-details" style={{ borderColor: selectedRegion.accentColor }}>
+                <h3>{selectedRegion.name}</h3>
+                {selectedRegion.description.map((p, i) => <p key={i}>{p}</p>)}
+              </div>
+            )}
+          </div> */}
+
       </section>
 
     </div>

@@ -224,12 +224,40 @@ header h2 {
 
 .regioes {
   display: flex;
-  justify-content: center;
   margin-bottom: 20vh;
+  justify-content: center;
+}
+
+.regioes-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.regioes-group {
+  display: flex;
+  justify-content: space-around;
+}
+
+.region-details {
+  width: 500px;
+  height: 600px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 2rem;
+  overflow-y: auto;
+  transition: border-color 0.4s ease;
+  margin-left: 20vh;
+}
+
+.region-placeholder {
+  color: #888;
+  font-style: italic;
 }
 
 
-/* CLASSES DA REGION */
+/* CLASSES D0 MAPA */
 
 
 .map-wrapper {
@@ -255,3 +283,5 @@ header h2 {
 .map-pin:hover {
   transform: translate(-50%, -50%) scale(1.4);
 }
+
+/* FIM DAS CLASSES D0 MAPA */
