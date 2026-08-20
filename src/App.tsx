@@ -2,8 +2,8 @@ import { useState } from 'react';
 import './App.css';
 import { albuns } from './data/albuns';
 import { characters } from './data/characters';
-import { regions } from './data/regions';
 import { LoreMap } from './components/LoreMap';
+import { RegionDetails } from './components/RegionDetails'
 import type { Region } from './types';
 
 const ITEM_WIDTH = 200;
@@ -78,9 +78,16 @@ function App() {
     <div>
       {/* <div className="hero"></div> */}
       <header>
-        <div>
-          <img src="/logo.png" alt="foto da logo" className="logo" onClick={reset}/>
+        
+        <div className="logo-wrapper">
+          <img src="/logo.png" alt="foto da logo" className="logo" onClick={reset} />
+          <span className="logo-fullname">TWENTY ONE PILOTS</span>
         </div>
+
+        {/* <div>
+          <img src="/logo.png" alt="foto da logo" className="logo" onClick={reset}/>
+        </div> */}
+
         <nav className="header-options">
           <a href="#sobre">
             <h2>SOBRE</h2>
@@ -215,14 +222,16 @@ function App() {
                 className="region-details"
                 style={{ borderColor: selectedRegion?.accentColor ?? '#333' }}
               >
-                {selectedRegion ? (
+
+                <RegionDetails region={selectedRegion} />
+                {/* {selectedRegion ? (
                   <>
                     <h3 style={{ color: selectedRegion.accentColor }}>{selectedRegion.name}</h3>
                     {selectedRegion.description.map((p, i) => <p key={i}>{p}</p>)}
                   </>
                 ) : (
                   <p className="region-placeholder">Clique em um ponto do mapa para ver mais detalhes.</p>
-                )}
+                )} */}
               </div>
 
             </div>
@@ -233,21 +242,6 @@ function App() {
           
 
         </div>
-
-          {/* <div>
-            <h2 style={{ fontSize: '50px', fontFamily: 'Anton, sans-serif' }}>REGIÕES</h2>
-
-            <LoreMap onSelectRegion={setSelectedRegion} />
-          </div>
-
-          <div>
-            {selectedRegion && (
-              <div className="region-details" style={{ borderColor: selectedRegion.accentColor }}>
-                <h3>{selectedRegion.name}</h3>
-                {selectedRegion.description.map((p, i) => <p key={i}>{p}</p>)}
-              </div>
-            )}
-          </div> */}
 
       </section>
 

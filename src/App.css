@@ -84,6 +84,30 @@ header h2 {
   cursor: pointer;
 }
 
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo-fullname {
+  font-family: 'Anton', sans-serif;
+  font-size: 24px;
+  color: #DB2422;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 0;
+  opacity: 0;
+  margin-left: 0;
+  transition: max-width 0.5s ease, opacity 0.4s ease, margin-left 0.5s ease;
+}
+
+.logo-wrapper:hover .logo-fullname {
+  max-width: 400px;
+  opacity: 1;
+  margin-left: 20px;
+}
+
 .background {
   height: 100%;
   width: 100%;
