@@ -324,3 +324,37 @@ header h2 {
 }
 
 /* FIM DAS CLASSES D0 MAPA */
+
+/* CLASSES ROTACAO D0 MAPA */
+
+.map-rotator {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  transition: transform 1.2s ease-in-out;
+  transform-origin: center center;
+}
+
+.map-rotator.rotated {
+  transform: rotate(-90deg); /* gira o mapa pra Leste ficar pra cima */
+}
+
+.compass-pin {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #000;
+  border: 2px solid #E5CC0A;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 3;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(229, 204, 10, 0.5); }
+  50% { box-shadow: 0 0 0 10px rgba(229, 204, 10, 0); }
+}
+
+/* FIM DAS CLASSES ROTACAO D0 MAPA */

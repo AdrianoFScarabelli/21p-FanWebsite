@@ -21,12 +21,12 @@ export const regions: Region[] = [
       'É nessa ilha que vive uma comunidade de criaturas conhecidas como Neds, seres pacíficos que guardam o segredo da psicocinese em seus chifres.',
       'Clancy chega até Voldsøy náufrago, após o ataque ao submarino em Port Vial, e é justamente ali que sua jornada toma um novo rumo, ao receber dos Neds o poder que usaria para enfrentar os Bishops.',
     ],
-    position: { x: 35, y: 62 },
+    position: { x: 34, y: 61.5 },
   },
   {
     id: 3,
     name: 'Port Vial',
-    accentColor: '#E5CC0A',
+    accentColor: '#C41E1E',
     description: [
       'Port Vial é o principal porto controlado por Dema, funcionando como ponto de entrada e saída autorizado do território. É por ali que embarcações e expedições oficiais da cidade partem rumo ao mar aberto.',
       'O nome remete à Vialismo, a religião de estado praticada em Dema, que prega a submissão dos cidadãos e enxerga a partida rumo ao desconhecido como um destino glorioso a ser evitado.',
@@ -66,14 +66,5 @@ export const regions: Region[] = [
       'Mensagens como "a bússola mente, eles não controlam você" reforçam o verdadeiro significado por trás do labirinto: a ideia de que existe sempre um caminho de escape, mesmo quando o sistema insiste que não há saída.',
     ],
     position: { x: 78, y: 52 },
-  },
-  {
-    id: 7,
-    name: 'East is up',
-    accentColor: '#000',
-    description: [
-      'EAST IS UP',
-    ],
-    position: { x: 15, y: 86.5 },
   },
 ];
