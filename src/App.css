@@ -295,9 +295,7 @@ header h2 {
   font-style: italic;
 }
 
-
 /* CLASSES D0 MAPA */
-
 
 .map-wrapper {
   cursor: grab;
@@ -358,3 +356,45 @@ header h2 {
 }
 
 /* FIM DAS CLASSES ROTACAO D0 MAPA */
+
+.footer {
+  text-align: center;
+  border-top: 2px solid #333;
+}
+
+.footer-logo {
+  height: 100px;
+  width: 100px;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.footer-disclaimer {
+  font-size: 14px;
+  color: #999;
+  max-width: 500px;
+  margin: 0.5rem auto;
+  line-height: 1.5;
+}
+
+.footer-official-link {
+  color: #DB2422;
+  font-family: 'Anton', sans-serif;
+  text-decoration: none;
+  border: 1px solid #DB2422;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+.footer-official-link:hover {
+  background-color: #E5CC0A;
+  color: #000;
+  border: 1px solid #E5CC0A;
+}
+
+.footer-social {
+  
+}

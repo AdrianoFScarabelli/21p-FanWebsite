@@ -206,46 +206,53 @@ function App() {
           </div>
         </div>
       </section>
-
       {/* Section 5 */}
       <section id="regioes" className="regioes">
-
         <div className="regioes-content">
-
           <div>
-
             <h2 style={{ fontSize: '50px', fontFamily: 'Anton, sans-serif' }}>REGIÕES</h2>
-
             <div className="regioes-group">
-
               <LoreMap onSelectRegion={setSelectedRegion} />
-
               <div
                 className="region-details"
                 style={{ borderColor: selectedRegion?.accentColor ?? '#333' }}
               >
-
                 <RegionDetails region={selectedRegion} />
-                {/* {selectedRegion ? (
-                  <>
-                    <h3 style={{ color: selectedRegion.accentColor }}>{selectedRegion.name}</h3>
-                    {selectedRegion.description.map((p, i) => <p key={i}>{p}</p>)}
-                  </>
-                ) : (
-                  <p className="region-placeholder">Clique em um ponto do mapa para ver mais detalhes.</p>
-                )} */}
               </div>
-
             </div>
-
-            
           </div>
-
-          
-
         </div>
-
       </section>
+
+      {/* Footer */}
+      <footer className="footer">
+
+        <img src="logo.png" alt="Logo do Twenty One Pilots" className="footer-logo"/>
+
+        <p className="footer-disclaimer">
+          Este é um projeto de fã, criado apenas para fins de portfólio, estudo e treino.
+          Não possui vínculo oficial com a banda ou sua gravadora.
+        </p>
+
+        <a
+          href="https://twentyonepilots.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-official-link"
+        >
+          Visitar site oficial da banda
+        </a>
+
+        <p className="footer-disclaimer">
+          Twenty One Pilots © todos os direitos reservados aos seus respectivos detentores.
+          Site desenvolvido por Adriano Fernandes para fins de portfólio.
+        </p>
+
+        <div className="footer-social">
+          
+        </div>
+      
+      </footer>
 
     </div>
   );
