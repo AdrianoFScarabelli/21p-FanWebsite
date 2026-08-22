@@ -6,6 +6,9 @@ import { LoreMap } from './components/LoreMap';
 import { RegionDetails } from './components/RegionDetails'
 import type { Region } from './types';
 
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { SiGmail } from 'react-icons/si';
+
 const ITEM_WIDTH = 200;
 const GAP = 32;
 
@@ -76,17 +79,12 @@ function App() {
 
   return (
     <div>
-      {/* <div className="hero"></div> */}
       <header>
         
         <div className="logo-wrapper">
           <img src="/logo.png" alt="foto da logo" className="logo" onClick={reset} />
           <span className="logo-fullname">TWENTY ONE PILOTS</span>
         </div>
-
-        {/* <div>
-          <img src="/logo.png" alt="foto da logo" className="logo" onClick={reset}/>
-        </div> */}
 
         <nav className="header-options">
           <a href="#sobre">
@@ -227,7 +225,7 @@ function App() {
       {/* Footer */}
       <footer className="footer">
 
-        <img src="logo.png" alt="Logo do Twenty One Pilots" className="footer-logo"/>
+        <img src="logo.png" alt="Logo do Twenty One Pilots" className="footer-logo" onClick={reset}/>
 
         <p className="footer-disclaimer">
           Este é um projeto de fã, criado apenas para fins de portfólio, estudo e treino.
@@ -245,11 +243,41 @@ function App() {
 
         <p className="footer-disclaimer">
           Twenty One Pilots © todos os direitos reservados aos seus respectivos detentores.
-          Site desenvolvido por Adriano Fernandes para fins de portfólio.
+        </p>
+
+        <p className="footer-credit">
+          Site desenvolvido por <span style={{color: '#DB2422'}}>Adriano Fernandes Scarabelli</span>
         </p>
 
         <div className="footer-social">
-          
+
+          <a 
+            href="https://github.com/AdrianoFScarabelli?tab=overview&from=2026-08-01&to=2026-08-21"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <FaGithub size={28} className="footer-icon1"/>
+          </a>
+
+          <a 
+            href="https://www.linkedin.com/in/adriano-fernandes-scarabelli-728a31184"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin size={28} className="footer-icon2"/>
+          </a>
+
+          <a 
+            href="mailto:adrianoscarabelli@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Enviar e-mail"
+          >
+            <SiGmail size={28} className="footer-icon3"/>
+          </a>
+
         </div>
       
       </footer>

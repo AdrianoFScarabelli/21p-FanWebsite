@@ -64,6 +64,7 @@ export const regions: Region[] = [
       'The Way Out é o nome dado ao labirinto de passagens escondidas nos mapas oficiais de Dema, revelado pelos próprios documentos vazados pela cidade através do site secreto administrado por Clancy.',
       'A frase "East is up" (Leste é pra cima) aparece repetidamente nesses registros, indicando que a orientação real do mapa esconde uma saída que os Bishops preferem manter oculta dos cidadãos.',
       'Mensagens como "a bússola mente, eles não controlam você" reforçam o verdadeiro significado por trás do labirinto: a ideia de que existe sempre um caminho de escape, mesmo quando o sistema insiste que não há saída.',
+      'Talvez clicar na bússola faça alguma coisa...'
     ],
     position: { x: 78, y: 52 },
   },

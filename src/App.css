@@ -56,12 +56,6 @@ header h2 {
   font-family: 'Anton', sans-serif;
 }
 
-/* .hero {
-  height: 100vh;
-  width: 100%;
-  background-color: #000;
-} */
-
 .header-options {
   display: flex;
   font-size: 24px;
@@ -334,7 +328,7 @@ header h2 {
 }
 
 .map-rotator.rotated {
-  transform: rotate(-90deg); /* gira o mapa pra Leste ficar pra cima */
+  transform: rotate(-90deg);
 }
 
 .compass-pin {
@@ -369,12 +363,15 @@ header h2 {
   margin-bottom: 5vh;
 }
 
+.footer-logo:hover {
+  filter: brightness(60%);
+}
+
 .footer-disclaimer {
   font-size: 14px;
-  color: #999;
-  max-width: 500px;
-  margin: 0.5rem auto;
-  line-height: 1.5;
+  color: #B3B3B3;
+  max-width: 600px;
+  margin: auto;
 }
 
 .footer-official-link {
@@ -395,6 +392,48 @@ header h2 {
   border: 1px solid #E5CC0A;
 }
 
+.footer-credit {
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #E5E5E5;
+  letter-spacing: 0.5px;
+}
+
 .footer-social {
-  
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
+}
+
+.footer-icon1 {
+  margin-left: 2vh;
+  color: #DB2422;
+  transition: filter 0.3s ease; 
+}
+
+.footer-icon1:hover {
+  filter: brightness(60%);
+}
+
+.footer-icon2 {
+  margin-left: 2vh;
+  color: #DB2422;
+  transition: filter 0.3s ease; 
+}
+
+.footer-icon2:hover {
+  filter: brightness(60%);
+}
+
+.footer-icon3 {
+  margin-left: 2vh;
+  height: 28px;
+  width: 28px;
+  color: #DB2422;
+  transition: filter 0.3s ease; 
+
+}
+
+.footer-icon3:hover {
+  filter: brightness(60%);
 }
