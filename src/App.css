@@ -359,6 +359,7 @@ header h2 {
 .footer-logo {
   height: 100px;
   width: 100px;
+  cursor: pointer;
   margin-top: 5vh;
   margin-bottom: 5vh;
 }
