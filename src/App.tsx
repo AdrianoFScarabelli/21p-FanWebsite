@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import { albuns } from './data/albuns';
 import { characters } from './data/characters';
@@ -26,8 +26,6 @@ function App() {
   const goToNextAlbum = () => {
     setActiveAlbumIndex((prev) => (prev + 1) % albuns.length);
   };
-
-  const offset = activeAlbumIndex * (ITEM_WIDTH + GAP);
 
   //LÓGICA PERSONAGENS
 
@@ -76,6 +74,21 @@ function App() {
   function reset() {
     window.scrollTo(0, 0);
   }
+
+  //LÓGICA RESPONSIVIDADE
+
+  const [itemWidth, setItemWidth] = useState(200);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      setItemWidth(window.innerWidth <= 768 ? 120 : 200);
+    };
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
+
+  const offset = activeAlbumIndex * (itemWidth + GAP);
 
   return (
     <div>
@@ -129,7 +142,7 @@ function App() {
         <div className="albuns-track-wrapper">
           <div
             className="albuns-track"
-            style={{ transform: `translateX(calc(50% - ${ITEM_WIDTH / 2}px - ${offset}px))` }}
+            style={{ transform: `translateX(calc(50% - ${itemWidth / 2}px - ${offset}px))` }}
           >
             {albuns.map((album, index) => (
               <img

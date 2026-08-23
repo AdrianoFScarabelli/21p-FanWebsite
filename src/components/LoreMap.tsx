@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import { regions } from '../data/regions';
 import type { Region } from '../types';
@@ -7,21 +7,46 @@ interface LoreMapProps {
   onSelectRegion: (region: Region) => void;
 }
 
+function getMapSize(width: number): number {
+  if (width <= 480) return 320;
+  if (width <= 768) return 400;
+  return 600;
+}
+
 export function LoreMap({ onSelectRegion }: LoreMapProps) {
   const [isRotated, setIsRotated] = useState(false);
+  const [mapSize, setMapSize] = useState(getMapSize(window.innerWidth));
+
+  useEffect(() => {
+    function handleResize() {
+      setMapSize(getMapSize(window.innerWidth));
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <TransformWrapper initialScale={1} minScale={1} maxScale={4} limitToBounds={true}>
       <TransformComponent
-        wrapperStyle={{ width: '600px', height: '600px', overflow: 'hidden', border: '2px solid #333', margin: '0 auto' }}
-        contentStyle={{ width: '600px', height: '600px' }}
+        wrapperStyle={{
+          width: `${mapSize}px`,
+          height: `${mapSize}px`,
+          overflow: 'hidden',
+          border: '2px solid #333',
+          margin: '0 auto',
+        }}
+        contentStyle={{ width: `${mapSize}px`, height: `${mapSize}px` }}
       >
-        <div className={`map-rotator ${isRotated ? 'rotated' : ''}`}>
+        <div
+          className={`map-rotator ${isRotated ? 'rotated' : ''}`}
+          style={{ width: `${mapSize}px`, height: `${mapSize}px` }}
+        >
           <img
             src="/map.png"
             alt="Mapa de Trench"
             className="map-image"
-            style={{ width: '600px', height: '600px', objectFit: 'cover' }}
+            style={{ width: `${mapSize}px`, height: `${mapSize}px`, objectFit: 'cover' }}
           />
 
           {regions.map((region) => (
@@ -38,7 +63,6 @@ export function LoreMap({ onSelectRegion }: LoreMapProps) {
             />
           ))}
 
-          {/* ponto especial "East is up" */}
           <button
             className="compass-pin"
             style={{ left: '15%', top: '86.5%' }}
