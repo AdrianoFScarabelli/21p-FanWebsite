@@ -569,17 +569,61 @@ header h2 {
   }
 
   .albuns-item.active {
-    transform: scale(1.5); /* ajusta a escala pro tamanho menor da base */
+    transform: scale(1.5);
   }
 
   .albuns-options {
     font-size: 20px;
+    margin-bottom: 4rem;
   }
 
   .arrow-left, .arrow-right {
     width: 18px;
     height: 18px;
     margin: 0 20px;
+  }
+}
+
+/* RESPONSIVIDADE PERSONAGENS */
+
+@media (max-width: 768px) {
+  .personagens {
+    flex-direction: column;
+    align-items: center; /* centraliza os filhos diretos (.personagens-info e .personagens-group) */
+    text-align: left; /* texto alinhado à esquerda, não centralizado */
+    padding: 2rem 1rem;
+  }
+
+  .personagens-info {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .personagens-group {
+    margin: 2rem 0 0 0;
+  }
+
+  .personagens-card {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* centraliza a imagem horizontalmente */
+  }
+
+  .personagens-info h2 {
+    font-size: 36px !important;
+  }
+
+  /*.personagens-info p {
+    font-size: 16px;
+  } */
+
+  .personagens-info p {
+    font-size: 16px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
   }
 }
 
@@ -603,26 +647,6 @@ header h2 {
     width: 95%;
     height: 350px;
     padding: 1.5rem;
-  }
-}
-
-/* RESPONSIVIDADE PERSONAGENS */
-
-@media (max-width: 768px) {
-  .personagens {
-    flex-direction: column;
-    padding: 2rem 1rem;
-    text-align: center;
-  }
-
-  .personagens-info {
-    margin-bottom: 2rem;
-  }
-
-  .personagens-card {
-    max-width: 280px;
-    width: 100%;
-    height: auto;
   }
 }
 
