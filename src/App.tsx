@@ -9,7 +9,6 @@ import type { Region } from './types';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
 
-const ITEM_WIDTH = 200;
 const GAP = 32;
 
 function App() {
