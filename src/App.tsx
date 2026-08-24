@@ -117,7 +117,7 @@ function App() {
 
       {/* Section 1 */}
       <section id="background" className="background">
-        <img src="/background.png" alt="foto de fundo" />
+        <img src="/background.png" alt="foto de fundo" className="background-image" />
       </section>
       {/* Section 2 */}
       <section id="sobre" className="sobre">
@@ -180,7 +180,7 @@ function App() {
         </div>
         <div className="personagens-group">
           <div className='personagens-costumes'>
-            <div className="personagens-numbers">
+            <div>
               {activeCharacter.imageUrl.map((imageUrl, index) => (
                 <button
                   key={index}
