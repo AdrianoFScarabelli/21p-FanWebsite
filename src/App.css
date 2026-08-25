@@ -123,6 +123,10 @@ header h2 {
   display: flex;
 }
 
+.sobre-info {
+  margin-left: 2vw;
+}
+
 .sobre-image {
   height: 900px;
   width: 1100px;
@@ -141,7 +145,7 @@ header h2 {
   justify-content: center;
   font-family: 'Anton', sans-serif;
   font-size: 30px;
-  margin-bottom: 2vh;
+  margin-bottom: 4vh;
 }
 
 .albuns-track-wrapper {
@@ -276,6 +280,11 @@ header h2 {
   justify-content: center;
 }
 
+.regioes-title {
+  font-family: 'Anton', sans-serif;
+  margin-top: 5vh;
+}
+
 .regioes-group {
   display: flex;
   justify-content: space-around;
@@ -295,6 +304,22 @@ header h2 {
 .region-placeholder {
   color: #888;
   font-style: italic;
+}
+
+.region-details-scroll {
+  overflow-y: auto;
+  height: 100%;
+
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* Internet Explorer/Edge legado */
+  -ms-overflow-style: none;
+}
+
+/* Chrome, Safari, Edge modernos */
+.region-details-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 /* CLASSES D0 MAPA */
@@ -589,14 +614,18 @@ header h2 {
 @media (max-width: 768px) {
   .personagens {
     flex-direction: column;
-    align-items: center; /* centraliza os filhos diretos (.personagens-info e .personagens-group) */
-    text-align: left; /* texto alinhado à esquerda, não centralizado */
+    align-items: center;
+    text-align: left;
     padding: 2rem 1rem;
   }
 
   .personagens-info {
     width: 100%;
     margin: 0 auto;
+  }
+
+  .costume-button {
+    font-size: 0.9rem;
   }
 
   .personagens-group {
@@ -608,16 +637,12 @@ header h2 {
     width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto; /* centraliza a imagem horizontalmente */
+    margin: 0 auto;
   }
 
   .personagens-info h2 {
     font-size: 36px !important;
   }
-
-  /*.personagens-info p {
-    font-size: 16px;
-  } */
 
   .personagens-info p {
     font-size: 16px;
@@ -630,7 +655,8 @@ header h2 {
 /* RESPONSIVIDADE MAPA */
 
 @media (max-width: 1024px) {
-  .regioes-content {
+
+  .regioes-group {
     flex-direction: column;
     align-items: center;
   }
@@ -639,10 +665,22 @@ header h2 {
     width: 90%;
     max-width: 600px;
     height: 400px;
+    margin: 1rem 0 0 0;
   }
 }
 
 @media (max-width: 768px) {
+
+  .regioes-title {
+    margin-top: 3rem;
+    margin-left: 0.6rem;
+  }
+
+  .regioes-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .region-details {
     width: 95%;
     height: 350px;

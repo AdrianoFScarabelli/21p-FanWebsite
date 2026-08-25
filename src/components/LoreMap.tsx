@@ -8,8 +8,8 @@ interface LoreMapProps {
 }
 
 function getMapSize(width: number): number {
-  if (width <= 480) return 320;
-  if (width <= 768) return 400;
+  if (width <= 480) return 390;
+  if (width <= 768) return 390;
   return 600;
 }
 
@@ -27,7 +27,7 @@ export function LoreMap({ onSelectRegion }: LoreMapProps) {
   }, []);
 
   return (
-    <TransformWrapper initialScale={1} minScale={1} maxScale={4} limitToBounds={true}>
+    <TransformWrapper key={mapSize} initialScale={1} minScale={1} maxScale={4} limitToBounds={true}>
       <TransformComponent
         wrapperStyle={{
           width: `${mapSize}px`,

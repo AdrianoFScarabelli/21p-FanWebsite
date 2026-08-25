@@ -122,7 +122,7 @@ function App() {
       {/* Section 2 */}
       <section id="sobre" className="sobre">
         <img src="/sobre-image.png" alt="foto da logo" className="sobre-image" />
-        <div style={{marginRight: '50px'}}>
+        <div className="sobre-info">
           <h2 style={{fontSize: '50px', fontFamily: 'Anton, sans-serif'}}>SOBRE</h2>
           <p>
             Formada em Columbus, Ohio, em 2009, a Twenty One Pilots nasceu como trio antes de se consolidar na dupla que conhecemos hoje: Tyler Joseph, vocalista, tecladista e compositor principal, e Josh Dun, baterista, que entrou pra banda em 2011. <br />
@@ -220,7 +220,7 @@ function App() {
       <section id="regioes" className="regioes">
         <div className="regioes-content">
           <div>
-            <h2 style={{ fontSize: '50px', fontFamily: 'Anton, sans-serif' }}>REGIÕES</h2>
+            <h2 className="regioes-title">REGIÕES</h2>
             <div className="regioes-group">
               <LoreMap onSelectRegion={setSelectedRegion} />
               <div
