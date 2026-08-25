@@ -6,7 +6,7 @@ import { LoreMap } from './components/LoreMap';
 import { RegionDetails } from './components/RegionDetails'
 import type { Region } from './types';
 
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaBars, FaTimes } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
 
 const GAP = 32;
@@ -89,6 +89,14 @@ function App() {
 
   const offset = activeAlbumIndex * (itemWidth + GAP);
 
+  //LÓGICA RESPONSIVIDADE HEADER
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  function closeMenu() {
+    setIsMenuOpen(false);
+  }
+
   return (
     <div>
       <header>
@@ -111,9 +119,28 @@ function App() {
           <a href="#regioes">
             <h2>REGIÕES</h2>
           </a>
-          
         </nav>
+
+        {/* Ícone hamburguer, só aparece em mobile via CSS */}
+        <button
+          className="menu-toggle"
+          onClick={() => setIsMenuOpen((prev) => !prev)}
+          aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+        >
+          {isMenuOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
+        </button>
+
       </header>
+
+      {/* Menu dropdown mobile, só renderiza quando aberto */}
+      {isMenuOpen && (
+        <nav className="mobile-menu">
+          <a href="#sobre" onClick={closeMenu}><h2>SOBRE</h2></a>
+          <a href="#albuns" onClick={closeMenu}><h2>ÁLBUNS</h2></a>
+          <a href="#personagens" onClick={closeMenu}><h2>PERSONAGENS</h2></a>
+          <a href="#regioes" onClick={closeMenu}><h2>REGIÕES</h2></a>
+        </nav>
+      )}
 
       {/* Section 1 */}
       <section id="background" className="background">
