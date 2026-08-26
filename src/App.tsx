@@ -76,7 +76,7 @@ function App() {
 
   //LÓGICA RESPONSIVIDADE
 
-  const [itemWidth, setItemWidth] = useState(200);
+  /* const [itemWidth, setItemWidth] = useState(200);
 
   useEffect(() => {
     const updateWidth = () => {
@@ -85,6 +85,19 @@ function App() {
     updateWidth();
     window.addEventListener('resize', updateWidth);
     return () => window.removeEventListener('resize', updateWidth);
+  }, []);
+
+  const offset = activeAlbumIndex * (itemWidth + GAP); */
+
+  const [itemWidth, setItemWidth] = useState(getItemWidth(window.innerWidth));
+
+  useEffect(() => {
+    function handleResize() {
+      setItemWidth(getItemWidth(window.innerWidth));
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const offset = activeAlbumIndex * (itemWidth + GAP);
@@ -165,7 +178,33 @@ function App() {
         style = {{ background: `linear-gradient(180deg, #000 0%, ${activeAlbum.backgroundColor} 100%)` }}
       >
         <h2 style={{fontSize: '50px', fontFamily: 'Anton, sans-serif', marginTop: '12vh'}}>DISCOGRAFIA</h2>
-        <div className="albuns-track-wrapper">
+        
+        {itemWidth <= 120 ? (
+          // Versão mobile: só a capa ativa, clique nela avança
+          <img
+            src={activeAlbum.imageUrl}
+            alt={activeAlbum.name}
+            className="albuns-item-mobile"
+            onClick={goToNextAlbum}
+          />
+        ) : (
+          // Versão desktop: o carrossel completo que já existe
+          <div className="albuns-track-wrapper">
+            <div className="albuns-track" style={{ transform: `translateX(calc(50% - ${itemWidth / 2}px - ${offset}px))` }}>
+              {albuns.map((album, index) => (
+                <img
+                  key={album.id}
+                  src={album.imageUrl}
+                  alt={album.name}
+                  className={`albuns-item ${index === activeAlbumIndex ? 'active' : ''}`}
+                  onClick={() => setActiveAlbumIndex(index)}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* <div className="albuns-track-wrapper">
           <div
             className="albuns-track"
             style={{ transform: `translateX(calc(50% - ${itemWidth / 2}px - ${offset}px))` }}
@@ -180,7 +219,8 @@ function App() {
               />
             ))}
           </div>
-        </div>
+        </div> */}
+
         <div className="albuns-options">
           <span
             className="arrow-left"
@@ -323,6 +363,13 @@ function App() {
 
     </div>
   );
+}
+
+// função pura, fora do componente
+function getItemWidth(width: number): number {
+  if (width <= 480) return 90;
+  if (width <= 768) return 120;
+  return 200;
 }
 
 export default App;

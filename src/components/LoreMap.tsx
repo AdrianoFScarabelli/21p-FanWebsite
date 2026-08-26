@@ -8,8 +8,8 @@ interface LoreMapProps {
 }
 
 function getMapSize(width: number): number {
-  if (width <= 480) return 385;
-  if (width <= 768) return 385;
+  if (width <= 480) return 370;
+  if (width <= 768) return 370;
   return 600;
 }
 
