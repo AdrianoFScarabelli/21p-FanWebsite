@@ -8,7 +8,7 @@ Landing page criada como projeto de portfólio, explorando a história, os álbu
 
 ## Sobre o projeto
 
-O objetivo foi ir além de uma landing page estática comum, unindo conteúdo narrativo (a lore da banda) com interações que reforçam a identidade visual de cada seção — cores que mudam conforme o álbum selecionado, um mapa interativo do universo fictício da banda, e animações de texto personalizadas.
+O objetivo foi ir além de uma landing page estática comum, unindo conteúdo narrativo (a lore da banda) com interações que reforçam a identidade visual de cada seção, cores que mudam conforme o álbum selecionado, um mapa interativo do universo fictício da banda, e animações de texto personalizadas.
 
 ## Funcionalidades
 
