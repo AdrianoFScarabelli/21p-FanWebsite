@@ -12,21 +12,21 @@ O objetivo foi ir além de uma landing page estática comum, unindo conteúdo na
 
 ## Funcionalidades
 
-- **Carrossel de álbuns** com transição animada e paleta de cores dinâmica, mudando o fundo e os detalhes visuais conforme o álbum selecionado
-- **Galeria de personagens** da lore, com troca de traje/visual e navegação por setas ou índice numérico
-- **Mapa interativo** da região fictícia de Dema/Trench, com zoom, arraste e pontos clicáveis que revelam a história de cada local
-- **Animação de texto customizada**, revelando as descrições estilo "fumaça", reforçando o tema de mistério da lore
-- **Design responsivo**, adaptado para desktop e dispositivos móveis
+- **Carrossel de álbuns**: com transição animada e paleta de cores dinâmica, mudando o fundo e os detalhes visuais conforme o álbum selecionado
+- **Galeria de personagens**: da lore, com troca de traje/visual e navegação por setas ou índice numérico
+- **Mapa interativo**: da região fictícia de Dema/Trench, com zoom, arraste e pontos clicáveis que revelam a história de cada local
+- **Animação de texto customizada**: revelando as descrições estilo "fumaça", reforçando o tema de mistério da lore
+- **Design responsivo**: adaptado para desktop e dispositivos móveis
 
 ## Tecnologias e técnicas utilizadas
 
-- **React + TypeScript** — componentização e tipagem estática, garantindo maior previsibilidade e menos erros durante o desenvolvimento
-- **Vite** — ambiente de build rápido para desenvolvimento
-- **Hooks customizados** — lógica reutilizável para as animações de texto e para reagir a mudanças de tamanho de tela
-- **Context/estado compartilhado** — controle de tema de cor dinâmico entre componentes
-- **react-zoom-pan-pinch** — biblioteca para a experiência de zoom e arraste no mapa interativo
-- **CSS moderno** — uso de `clip-path`, gradientes dinâmicos e `color-mix()` para efeitos visuais sem depender de imagens extras
-- **Boas práticas de acessibilidade** — uso de `aria-label` em elementos interativos sem texto visível
+- **React + TypeScript**: componentização e tipagem estática, garantindo maior previsibilidade e menos erros durante o desenvolvimento
+- **Vite**: ambiente de build rápido para desenvolvimento
+- **Hooks customizados**: lógica reutilizável para as animações de texto e para reagir a mudanças de tamanho de tela
+- **Context/estado compartilhado**: controle de tema de cor dinâmico entre componentes
+- **react-zoom-pan-pinch**: biblioteca para a experiência de zoom e arraste no mapa interativo
+- **CSS moderno**: uso de `clip-path`, gradientes dinâmicos e `color-mix()` para efeitos visuais sem depender de imagens extras
+- **Boas práticas de acessibilidade**: uso de `aria-label` em elementos interativos sem texto visível
 
 ## Rodando o projeto localmente
 
