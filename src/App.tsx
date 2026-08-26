@@ -1,13 +1,12 @@
-import { useState, useEffect } from 'react';
 import './App.css';
+import { useState, useEffect } from 'react';
 import { albuns } from './data/albuns';
 import { characters } from './data/characters';
 import { LoreMap } from './components/LoreMap';
 import { RegionDetails } from './components/RegionDetails'
-import type { Region } from './types';
-
 import { FaGithub, FaLinkedin, FaBars, FaTimes } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
+import type { Region } from './types';
 
 const GAP = 32;
 
@@ -43,27 +42,8 @@ function App() {
     setActiveCostumeIndex(0);
   };
 
-  function changeCostume(index: string) {
-
-    if(index===activeCharacter.imageUrl[0]){
-      setActiveCostumeIndex(0);
-    }
-    else if(index===activeCharacter.imageUrl[1]) {
-      setActiveCostumeIndex(1);
-    }
-
-    else if(index===activeCharacter.imageUrl[2]) {
-      setActiveCostumeIndex(2);
-    }
-
-    else if(index===activeCharacter.imageUrl[3]) {
-      setActiveCostumeIndex(3);
-    }
-
-    else {
-      setActiveCostumeIndex(4);
-    }
-    
+  function changeCostume(imageUrl: string) {
+    setActiveCostumeIndex(activeCharacter.imageUrl.indexOf(imageUrl));
   }
 
   //LÓGICA REGIOES
@@ -75,19 +55,6 @@ function App() {
   }
 
   //LÓGICA RESPONSIVIDADE
-
-  /* const [itemWidth, setItemWidth] = useState(200);
-
-  useEffect(() => {
-    const updateWidth = () => {
-      setItemWidth(window.innerWidth <= 768 ? 120 : 200);
-    };
-    updateWidth();
-    window.addEventListener('resize', updateWidth);
-    return () => window.removeEventListener('resize', updateWidth);
-  }, []);
-
-  const offset = activeAlbumIndex * (itemWidth + GAP); */
 
   const [itemWidth, setItemWidth] = useState(getItemWidth(window.innerWidth));
 
@@ -110,15 +77,21 @@ function App() {
     setIsMenuOpen(false);
   }
 
+  const [showCopyToast, setShowCopyToast] = useState(false);
+
+  function copyEmail() {
+    navigator.clipboard.writeText('adrianoscarabelli@gmail.com');
+    setShowCopyToast(true);
+    setTimeout(() => setShowCopyToast(false), 2000);
+  }
+
   return (
     <div>
       <header>
-        
         <div className="logo-wrapper">
           <img src="/logo.png" alt="foto da logo" className="logo" onClick={reset} />
           <span className="logo-fullname">TWENTY ONE PILOTS</span>
         </div>
-
         <nav className="header-options">
           <a href="#sobre">
             <h2>SOBRE</h2>
@@ -133,8 +106,6 @@ function App() {
             <h2>REGIÕES</h2>
           </a>
         </nav>
-
-        {/* Ícone hamburguer, só aparece em mobile via CSS */}
         <button
           className="menu-toggle"
           onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -142,10 +113,7 @@ function App() {
         >
           {isMenuOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
         </button>
-
       </header>
-
-      {/* Menu dropdown mobile, só renderiza quando aberto */}
       {isMenuOpen && (
         <nav className="mobile-menu">
           <a href="#sobre" onClick={closeMenu}><h2>SOBRE</h2></a>
@@ -154,7 +122,6 @@ function App() {
           <a href="#regioes" onClick={closeMenu}><h2>REGIÕES</h2></a>
         </nav>
       )}
-
       {/* Section 1 */}
       <section id="background" className="background">
         <img src="/background.png" alt="foto de fundo" className="background-image" />
@@ -178,9 +145,7 @@ function App() {
         style = {{ background: `linear-gradient(180deg, #000 0%, ${activeAlbum.backgroundColor} 100%)` }}
       >
         <h2 style={{fontSize: '50px', fontFamily: 'Anton, sans-serif', marginTop: '12vh'}}>DISCOGRAFIA</h2>
-        
         {itemWidth <= 120 ? (
-          // Versão mobile: só a capa ativa, clique nela avança
           <img
             src={activeAlbum.imageUrl}
             alt={activeAlbum.name}
@@ -188,7 +153,6 @@ function App() {
             onClick={goToNextAlbum}
           />
         ) : (
-          // Versão desktop: o carrossel completo que já existe
           <div className="albuns-track-wrapper">
             <div className="albuns-track" style={{ transform: `translateX(calc(50% - ${itemWidth / 2}px - ${offset}px))` }}>
               {albuns.map((album, index) => (
@@ -203,24 +167,6 @@ function App() {
             </div>
           </div>
         )}
-
-        {/* <div className="albuns-track-wrapper">
-          <div
-            className="albuns-track"
-            style={{ transform: `translateX(calc(50% - ${itemWidth / 2}px - ${offset}px))` }}
-          >
-            {albuns.map((album, index) => (
-              <img
-                key={album.id}
-                src={album.imageUrl}
-                alt={album.name}
-                className={`albuns-item ${index === activeAlbumIndex ? 'active' : ''}`}
-                onClick={() => setActiveAlbumIndex(index)}
-              />
-            ))}
-          </div>
-        </div> */}
-
         <div className="albuns-options">
           <span
             className="arrow-left"
@@ -266,7 +212,7 @@ function App() {
             style={{ borderColor: activeCharacter.accentColor }}
             className="personagens-card"
           />
-          <div className="albuns-options">
+          <div className="personagens-options">
             <span
               className="arrow-left"
               style={{ backgroundColor: activeCharacter.accentColor }}
@@ -300,17 +246,13 @@ function App() {
           </div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="footer">
-
         <img src="logo.png" alt="Logo do Twenty One Pilots" className="footer-logo" onClick={reset}/>
-
         <p className="footer-disclaimer">
           Este é um projeto de fã, criado apenas para fins de portfólio, estudo e treino.
           Não possui vínculo oficial com a banda ou sua gravadora.
         </p>
-
         <a
           href="https://twentyonepilots.com"
           target="_blank"
@@ -319,17 +261,13 @@ function App() {
         >
           Visitar site oficial da banda
         </a>
-
         <p className="footer-disclaimer">
           Twenty One Pilots © todos os direitos reservados aos seus respectivos detentores.
         </p>
-
         <p className="footer-credit">
           Site desenvolvido por <span style={{color: '#DB2422'}}>Adriano Fernandes Scarabelli</span>
         </p>
-
         <div className="footer-social">
-
           <a 
             href="https://github.com/AdrianoFScarabelli?tab=overview&from=2026-08-01&to=2026-08-21"
             target="_blank"
@@ -338,7 +276,6 @@ function App() {
           >
             <FaGithub size={28} className="footer-icon1"/>
           </a>
-
           <a 
             href="https://www.linkedin.com/in/adriano-fernandes-scarabelli-728a31184"
             target="_blank"
@@ -347,25 +284,20 @@ function App() {
           >
             <FaLinkedin size={28} className="footer-icon2"/>
           </a>
-
-          <a 
-            href="mailto:adrianoscarabelli@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Enviar e-mail"
-          >
-            <SiGmail size={28} className="footer-icon3"/>
-          </a>
-
+          <button onClick={copyEmail} aria-label="Copiar e-mail" className="icon-button">
+            <SiGmail size={28} className="footer-icon3" />
+          </button>
         </div>
-      
+        {showCopyToast && (
+          <div className="copy-toast">
+            E-mail copiado!
+          </div>
+        )}
       </footer>
-
     </div>
   );
 }
 
-// função pura, fora do componente
 function getItemWidth(width: number): number {
   if (width <= 480) return 90;
   if (width <= 768) return 120;
