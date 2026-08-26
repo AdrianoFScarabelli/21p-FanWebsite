@@ -45,4 +45,4 @@ Este é um projeto de fã, criado exclusivamente para fins de portfólio, estudo
 
 Desenvolvido por **Adriano Fernandes Scarabelli**
 
-- [LinkedIn](www.linkedin.com/in/adriano-fernandes-scarabelli-728a31184)
+- [LinkedIn](https://www.linkedin.com/in/adriano-fernandes-scarabelli-728a31184/)
