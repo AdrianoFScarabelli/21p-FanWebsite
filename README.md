@@ -4,7 +4,7 @@ Landing page criada como projeto de portfólio, explorando a história, os álbu
 
 🔗 **[Ver o projeto ao vivo](https://21p-fan-website.vercel.app)**
 
-![Preview do projeto](./printSite.png)
+![Preview do projeto](public/printSite.png)
 
 ## Sobre o projeto
 
