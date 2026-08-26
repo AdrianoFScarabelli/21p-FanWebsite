@@ -269,6 +269,7 @@ header h2 {
 .personagens-costumes {
   display: flex;
   justify-content: space-evenly;
+  margin-right: 2.25vh;
   margin-bottom: 2vh;
 }
 
