@@ -89,7 +89,7 @@ function App() {
     <div>
       <header>
         <div className="logo-wrapper">
-          <img src="/logo.png" alt="foto da logo" className="logo" onClick={reset} />
+          <img src="/logo.png" alt="foto da logo" className="logo" onClick={reset} width={355} height={355}/>
           <span className="logo-fullname">TWENTY ONE PILOTS</span>
         </div>
         <nav className="header-options">
@@ -122,130 +122,136 @@ function App() {
           <a href="#regioes" onClick={closeMenu}><h2>REGIÕES</h2></a>
         </nav>
       )}
-      {/* Section 1 */}
-      <section id="background" className="background">
-        <img src="/background.png" alt="foto de fundo" className="background-image" />
-      </section>
-      {/* Section 2 */}
-      <section id="sobre" className="sobre">
-        <img src="/sobre-image.png" alt="foto da logo" className="sobre-image" />
-        <div className="sobre-info">
-          <h2 style={{fontSize: '50px', fontFamily: 'Anton, sans-serif'}}>SOBRE</h2>
-          <p>
-            Formada em Columbus, Ohio, em 2009, a Twenty One Pilots nasceu como trio antes de se consolidar na dupla que conhecemos hoje: Tyler Joseph, vocalista, tecladista e compositor principal, e Josh Dun, baterista, que entrou pra banda em 2011. <br />
-            O som da dupla é difícil de encaixar numa única categoria, misturam rock alternativo, hip hop, eletrônico e pop, muitas vezes dentro da mesma música. Essa recusa em seguir fórmulas é parte da identidade deles desde o início, assim como os shows ao vivo intensos e as máscaras e figurinos que carregam significado dentro do universo que construíram. <br />
-            Mais do que uma discografia, a Twenty One Pilots criou uma narrativa contínua que atravessa seus álbuns, personagens, símbolos e uma cidade fictícia chamada Dema formam uma lore que os fãs vêm decifrando junto com a banda há mais de uma década. Cada disco, de Vessel (2013) a Clancy (2024), adiciona uma nova camada a essa história.
-          </p>
-        </div>
-      </section>
-      {/* Section 3 */}
-      <section
-        id="albuns"
-        className="albuns"
-        style = {{ background: `linear-gradient(180deg, #000 0%, ${activeAlbum.backgroundColor} 100%)` }}
-      >
-        <h2 style={{fontSize: '50px', fontFamily: 'Anton, sans-serif', marginTop: '12vh'}}>DISCOGRAFIA</h2>
-        {itemWidth <= 120 ? (
-          <img
-            src={activeAlbum.imageUrl}
-            alt={activeAlbum.name}
-            className="albuns-item-mobile"
-            onClick={goToNextAlbum}
-          />
-        ) : (
-          <div className="albuns-track-wrapper">
-            <div className="albuns-track" style={{ transform: `translateX(calc(50% - ${itemWidth / 2}px - ${offset}px))` }}>
-              {albuns.map((album, index) => (
-                <img
-                  key={album.id}
-                  src={album.imageUrl}
-                  alt={album.name}
-                  className={`albuns-item ${index === activeAlbumIndex ? 'active' : ''}`}
-                  onClick={() => setActiveAlbumIndex(index)}
-                />
-              ))}
-            </div>
+      <main>
+        {/* Section 1 */}
+        <section id="background" className="background">
+          <img src="/background.png" alt="foto de fundo" className="background-image" width={355} height={355} />
+        </section>
+        {/* Section 2 */}
+        <section id="sobre" className="sobre">
+          <img src="/sobre-image.png" alt="foto da logo" className="sobre-image" width={355} height={355}/>
+          <div className="sobre-info">
+            <h2 style={{fontSize: '50px', fontFamily: 'Anton, sans-serif'}}>SOBRE</h2>
+            <p>
+              Formada em Columbus, Ohio, em 2009, a Twenty One Pilots nasceu como trio antes de se consolidar na dupla que conhecemos hoje: Tyler Joseph, vocalista, tecladista e compositor principal, e Josh Dun, baterista, que entrou pra banda em 2011. <br />
+              O som da dupla é difícil de encaixar numa única categoria, misturam rock alternativo, hip hop, eletrônico e pop, muitas vezes dentro da mesma música. Essa recusa em seguir fórmulas é parte da identidade deles desde o início, assim como os shows ao vivo intensos e as máscaras e figurinos que carregam significado dentro do universo que construíram. <br />
+              Mais do que uma discografia, a Twenty One Pilots criou uma narrativa contínua que atravessa seus álbuns, personagens, símbolos e uma cidade fictícia chamada Dema formam uma lore que os fãs vêm decifrando junto com a banda há mais de uma década. Cada disco, de Vessel (2013) a Clancy (2024), adiciona uma nova camada a essa história.
+            </p>
           </div>
-        )}
-        <div className="albuns-options">
-          <span
-            className="arrow-left"
-            style={{ backgroundColor: activeAlbum.arrowsColor }}
-            onClick={goToPrevAlbum}
-            role="button"
-            aria-label="Álbum anterior"
-          />
-          <p style={{ color: activeAlbum.foregroundColor }}>{activeAlbum.name}</p>
-          <span
-            className="arrow-right"
-            style={{ backgroundColor: activeAlbum.arrowsColor }}
-            onClick={goToNextAlbum}
-            role="button"
-            aria-label="Próximo álbum"
-          />
-        </div>
-      </section>
-      {/* Section 4 */}
-      <section id="personagens" className="personagens" style = {{ background: `linear-gradient(0deg, #000 0%, ${activeAlbum.backgroundColor} 100%)` }}>
-        <div className="personagens-info">
-          <h2 style={{fontSize: '50px', fontFamily: 'Anton, sans-serif'}}>PERSONAGENS</h2>
-          <p>{activeCharacter.description}</p>
-        </div>
-        <div className="personagens-group">
-          <div className='personagens-costumes'>
-            <div>
-              {activeCharacter.imageUrl.map((imageUrl, index) => (
-                <button
-                  key={index}
-                  className={`costume-button ${index === activeCostumeIndex ? 'active' : ''}`}
-                  onClick={() => changeCostume(imageUrl)}
-                  style={{ borderColor: activeCharacter.accentColor }}
-                >
-                  {index + 1}
-                </button>
-              ))}
+        </section>
+        {/* Section 3 */}
+        <section
+          id="albuns"
+          className="albuns"
+          style = {{ background: `linear-gradient(180deg, #000 0%, ${activeAlbum.backgroundColor} 100%)` }}
+        >
+          <h2 style={{fontSize: '50px', fontFamily: 'Anton, sans-serif', marginTop: '12vh'}}>DISCOGRAFIA</h2>
+          {itemWidth <= 120 ? (
+            <img
+              src={activeAlbum.imageUrl}
+              alt={activeAlbum.name}
+              className="albuns-item-mobile"
+              onClick={goToNextAlbum}
+              width={355}
+              height={355}
+            />
+          ) : (
+            <div className="albuns-track-wrapper">
+              <div className="albuns-track" style={{ transform: `translateX(calc(50% - ${itemWidth / 2}px - ${offset}px))` }}>
+                {albuns.map((album, index) => (
+                  <img
+                    key={album.id}
+                    src={album.imageUrl}
+                    alt={album.name}
+                    className={`albuns-item ${index === activeAlbumIndex ? 'active' : ''}`}
+                    onClick={() => setActiveAlbumIndex(index)}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-          <img
-            src={activeCharacter.imageUrl[activeCostumeIndex]}
-            alt={activeCharacter.name}
-            style={{ borderColor: activeCharacter.accentColor }}
-            className="personagens-card"
-          />
-          <div className="personagens-options">
+          )}
+          <div className="albuns-options">
             <span
               className="arrow-left"
-              style={{ backgroundColor: activeCharacter.accentColor }}
+              style={{ backgroundColor: activeAlbum.arrowsColor }}
+              onClick={goToPrevAlbum}
               role="button"
-              onClick={goToPrevCharacter}
+              aria-label="Álbum anterior"
             />
-            <p>{activeCharacter.name}</p>
+            <p style={{ color: activeAlbum.foregroundColor }}>{activeAlbum.name}</p>
             <span
               className="arrow-right"
-              style={{ backgroundColor: activeCharacter.accentColor }}
+              style={{ backgroundColor: activeAlbum.arrowsColor }}
+              onClick={goToNextAlbum}
               role="button"
-              onClick={goToNextCharacter}
+              aria-label="Próximo álbum"
             />
           </div>
-        </div>
-      </section>
-      {/* Section 5 */}
-      <section id="regioes" className="regioes">
-        <div className="regioes-content">
-          <div>
-            <h2 className="regioes-title">REGIÕES</h2>
-            <div className="regioes-group">
-              <LoreMap onSelectRegion={setSelectedRegion} />
-              <div
-                className="region-details"
-                style={{ borderColor: selectedRegion?.accentColor ?? '#333' }}
-              >
-                <RegionDetails region={selectedRegion} />
+        </section>
+        {/* Section 4 */}
+        <section id="personagens" className="personagens" style = {{ background: `linear-gradient(0deg, #000 0%, ${activeAlbum.backgroundColor} 100%)` }}>
+          <div className="personagens-info">
+            <h2 style={{fontSize: '50px', fontFamily: 'Anton, sans-serif'}}>PERSONAGENS</h2>
+            <p>{activeCharacter.description}</p>
+          </div>
+          <div className="personagens-group">
+            <div className='personagens-costumes'>
+              <div>
+                {activeCharacter.imageUrl.map((imageUrl, index) => (
+                  <button
+                    key={index}
+                    className={`costume-button ${index === activeCostumeIndex ? 'active' : ''}`}
+                    onClick={() => changeCostume(imageUrl)}
+                    style={{ borderColor: activeCharacter.accentColor }}
+                  >
+                    {index + 1}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <img
+              src={activeCharacter.imageUrl[activeCostumeIndex]}
+              alt={activeCharacter.name}
+              style={{ borderColor: activeCharacter.accentColor }}
+              className="personagens-card"
+            />
+            <div className="personagens-options">
+              <span
+                className="arrow-left"
+                style={{ backgroundColor: activeCharacter.accentColor }}
+                role="button"
+                aria-label="Personagem anterior"
+                onClick={goToPrevCharacter}
+              />
+              <p>{activeCharacter.name}</p>
+              <span
+                className="arrow-right"
+                style={{ backgroundColor: activeCharacter.accentColor }}
+                role="button"
+                aria-label="Próximo personagem"
+                onClick={goToNextCharacter}
+              />
+            </div>
+          </div>
+        </section>
+        {/* Section 5 */}
+        <section id="regioes" className="regioes">
+          <div className="regioes-content">
+            <div>
+              <h2 className="regioes-title">REGIÕES</h2>
+              <div className="regioes-group">
+                <LoreMap onSelectRegion={setSelectedRegion} />
+                <div
+                  className="region-details"
+                  style={{ borderColor: selectedRegion?.accentColor ?? '#333' }}
+                >
+                  <RegionDetails region={selectedRegion} />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
       {/* Footer */}
       <footer className="footer">
         <img src="logo.png" alt="Logo do Twenty One Pilots" className="footer-logo" onClick={reset}/>
