@@ -12,11 +12,11 @@ O objetivo foi ir além de uma landing page estática comum, unindo conteúdo na
 
 ## Funcionalidades
 
-- **Carrossel de álbuns:** com transição animada e paleta de cores dinâmica, mudando o fundo e os detalhes visuais conforme o álbum selecionado
-- **Galeria de personagens:** da lore, com troca de traje/visual e navegação por setas ou índice numérico
-- **Mapa interativo:** da região fictícia de Dema/Trench, com zoom, arraste e pontos clicáveis que revelam a história de cada local
-- **Animação de texto customizada:** revelando as descrições estilo "fumaça", reforçando o tema de mistério da lore
-- **Design responsivo:** adaptado para desktop e dispositivos móveis
+- **Carrossel de álbuns:** transição animada e paleta de cores dinâmica, mudando o fundo e os detalhes visuais conforme o álbum selecionado
+- **Galeria de personagens:** personagens da lore, com troca de traje/visual e navegação por setas ou índice numérico
+- **Mapa interativo:** mapa da região fictícia de Dema/Trench, com zoom, arraste e pontos clicáveis que revelam a história de cada local
+- **Animação de texto customizada:** animação revelando as descrições das regiões do mapa no estilo "fumaça", reforçando o tema de mistério da lore
+- **Design responsivo:** interface adaptada para desktop e dispositivos móveis
 
 ## Tecnologias e técnicas utilizadas
 
